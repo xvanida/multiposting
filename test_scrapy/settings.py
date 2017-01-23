@@ -14,7 +14,7 @@ BOT_NAME = 'test_scrapy'
 SPIDER_MODULES = ['test_scrapy.spiders']
 NEWSPIDER_MODULE = 'test_scrapy.spiders'
 
-TYPE_INFO = ["jobs", "internship"]
+TYPE_INFO = ["internship", "jobs"]
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

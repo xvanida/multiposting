@@ -19,12 +19,12 @@ class ToScrapeSpiderXPath(scrapy.Spider):
         item['url_name'] = response.meta['url_name']
         item['title'] = response.xpath('//div[@class="header"]/h2/text()').extract_first()
         item['reference'] = response.meta['id_offer']
-        item['publication_date'] = response.xpath('//div[@id="advanced_search"]/li[0]/span[@class="value"]/text()').extract_first()
-        item['location_name'] = response.xpath('//div[@id="advanced_search"]/li[1]/span[@class="value"]/text()').extract_first()
-        item['country'] = response.xpath('//div[@id="advanced_search"]/li[1]/span[@class="value"]/text()').extract_first()
-        item['postal_code'] = response.xpath('//div[@id="advanced_search"]/li[1]/span[@class="value"]/text()').extract_first()
-        item['education_level'] = response.xpath('//div[@id="advanced_search"]/li[3]/span[@class="value"]/text()').extract_first()
-        item['experience_level'] = response.xpath('//div[@id="advanced_search"]/li[4]/span[@class="value"]/text()').extract_first()
-        item['contract_type'] = response.xpath('//div[@id="advanced_search"]/li[2]/span[@class="value"]/text()').extract_first()
-        item['job_description'] = response.xpath('//h3[0]/p/text()').extract()
+        item['publication_date'] = response.xpath('//div[@class="advanced-search"]/li[1]/span[@class="value"]/text()').extract_first()
+        item['location_name'] = response.xpath('//div[@class="advanced-search"]/li[1]/span[@class="value"]/text()').extract_first()
+        item['country'] = "France"
+        item['postal_code'] = response.xpath('//div[@class="advanced-search"]/li[1]/span[@class="value"]/text()').extract_first()
+        item['education_level'] = response.xpath('//div[@class="advanced-search"]/li[3]/span[@class="value"]/text()').extract_first()
+        item['experience_level'] = response.xpath('//div[@class="advanced-search"]/li[4]/span[@class="value"]/text()').extract_first()
+        item['contract_type'] = response.xpath('//div/span[@class="value"]/text()').extract_first()
+        item['job_description'] = response.xpath('//ul[@class="content description"]/p/text()').extract()
         yield item

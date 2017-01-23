@@ -20,7 +20,7 @@ class TestScrapyPipeline(object):
     def spider_opened(self, spider):
         self.exporters = {}
         for url in settings.TYPE_INFO:
-            my_file = open('multiposting2-%s-fr.csv' % url, 'w+b')
+            my_file = open('multiposting-%s-fr.csv' % url, 'w+b')
             exporter = CsvItemExporter(my_file)
             exporter.start_exporting()
             self.exporters[url] = exporter
